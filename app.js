@@ -1,5 +1,4 @@
 const wrapper = document.getElementById("tiles");
-
 let columns = 0,
   rows = 0;
 
@@ -23,7 +22,7 @@ const handleOnClick = index => {
     targets: ".tile",
     // backgroundColor: colors[count % (colors.length - 1)],
     opacity: toggle ? 0 : 1,
-    delay: anime.stagger(50, {
+    delay: anime.stagger(40, {
       grid: [columns, rows],
       from: index,
     }),
@@ -54,3 +53,4 @@ const createGrid = () => {
 };
 
 window.onresize = () => createGrid();
+window.onpageshow = () => createGrid();
